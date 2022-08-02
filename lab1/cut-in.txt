@@ -1,0 +1,7 @@
+Diode, 1mA Cut-In Voltage(in V)
+1N914, 0.597
+Red LED, 1.75
+Yellow LED, 1.75
+Green LED, 1.87
+Blue LED, 2.62
+White LED, 2.82

@@ -1,0 +1,18 @@
+*IV Characteristics of PIN Diode 
+*Rohan Rajesh Kalbag 20D170033
+.include rn142.txt
+
+vs 1 0 dc 0
+
+vy 2 3 dc 0
+da 1 2 DRN142S
+ra 3 0 100
+
+.dc vs 0.001 5 0.01
+.control
+
+run
+plot i(vy) vs {v(1) - v(2)} 
+plot ln(i(vy)) vs {v(1) - v(2)} 
+.endc
+.end

@@ -1,0 +1,30 @@
+*Rectifiers
+*Rohan Rajesh Kalbag 20D170033
+.include 1N4007.txt
+.include BAT85.txt
+
+*sources
+v1 1 0 sin(0 5 50 0 0 0)
+
+*uncomment for pn diode
+* d1 1 4 1N4007
+* d2 3 1 1N4007
+* d3 3 0 1N4007
+* d4 0 4 1N4007
+* ra 4 3 100
+
+*uncomment for schottky diode
+x1 1 4 BAT85
+x2 3 1 BAT85
+x3 3 0 BAT85
+x4 0 4 BAT85
+ra 4 3 100
+
+
+.tran 1ms 200ms 100ms
+.control
+
+run
+plot v(1) {v(4) - v(3)}
+.endc
+.end

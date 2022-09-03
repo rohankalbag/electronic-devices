@@ -1,0 +1,22 @@
+*Rohan Rajesh Kalbag 20D170033
+.include 1N34A.txt
+.include 1N914.txt
+
+vs 1 0 dc 0
+
+v1 21 31 dc 0
+da 1 21 1N914
+ra 31 0 100
+
+v2 22 32 dc 0
+db 1 22 1N34A
+rb 32 0 100
+
+.dc vs 0.001 5 0.01
+.control
+
+run
+plot i(v1) vs v(1) - v(21) i(v2) vs V(1) - V(22)
+*plot ln(i(vyellow)) vs v(1) - v(21) ln(i(vred)) vs v(1) - v(22) ln(i(vgreen)) vs v(1) - v(23) ln(i(vblue)) vs v(1) - v(24) ln(i(vwhite)) vs v(1) - v(25) ln(i(v1n914)) vs v(1) - v(26)
+.endc
+.end

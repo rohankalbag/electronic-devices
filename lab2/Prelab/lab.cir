@@ -1,0 +1,27 @@
+*Schottky Diode
+*Rohan Rajesh Kalbag 20D170033
+.include 1N4007.txt
+.include BAT85.txt
+
+*square wave sources
+*v1k 1 0 pulse(-1 1 0 1ns 1ns 0.5ms 1ms 0)
+v10k 1 0 pulse(-1 1 0 1ns 1ns 0.05ms 0.1ms 0)
+*v100k 1 0 pulse(-1 1 0 1ns 1ns 0.005ms 0.01ms 0)
+
+*uncomment for pn diode
+d1 1 4 1N4007
+vt 4 5 0 dc
+ra 5 0 100
+
+*uncomment for schottky diode
+* x1 1 4 BAT85
+* vt 4 5 0 dc
+* ra 5 0 100
+
+.tran 0.01us 560us 540us
+.control
+
+run
+plot i(vt)
+.endc
+.end

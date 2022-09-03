@@ -1,0 +1,12 @@
+part(a)
+
+Feature,1N914,1N34A
+Turnon Voltage considering 10mA current as forward turnon current, 0.4V, 0.74V
+Reverse Voltage,behaving like no reverse breakdown,-0.2V 
+Reverse Current, 0uA, -2.6uA
+
+reason for difference is that the diodes have different doping densities  in the p and n regions and hence accordingly different values of Vbi and VRb
+
+part(b)
+
+We see that the values are increasing with temperature

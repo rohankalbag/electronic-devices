@@ -1,0 +1,24 @@
+*RF Switch 
+*Rohan Rajesh Kalbag 20D170033
+.include rn142.txt
+
+
+d1 1 7 DRN142S
+vdiode 7 2 dc 0
+c1 2 3 100n
+r1 2 0 500 
+r2 1 4 500
+voutput 5 6 dc 0
+r3 6 0 50
+c2 5 1 100n
+vbias 4 0 dc -5
+vin 3 0 sin(0 3 10MEG 0 0 0) 
+
+.tran 0.1ns 2us 1us
+.control
+
+run
+plot v(5)
+plot i(voutput) i(vdiode)
+.endc
+.end

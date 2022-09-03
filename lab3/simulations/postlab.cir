@@ -1,0 +1,21 @@
+.include rn142.txt
+
+vin 1 0 sin(0 0.25 10MEG 0 0 0) 
+vdc 2 1 dc 1
+da 2 3 DRN142S
+vdiode 3 4 dc 0
+ra 4 0 1k
+
+.tran 0.1ns 2us 1us
+.control
+
+run
+plot v(2) - v(3)
+plot i(vdiode)
+let vd = {v(2) - v(3)}
+meas tran vpp pp vd from=1us to=2us
+meas tran ipp pp i(vdiode) from=1us to=2us 
+let dr = {vpp/ipp}
+print dr
+.endc
+.end

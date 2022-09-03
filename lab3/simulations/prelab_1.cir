@@ -1,0 +1,20 @@
+*Reverse Recovery Current
+*Rohan Rajesh Kalbag 20D170033
+.include rn142.txt
+
+*square wave sources
+v1k 1 0 pulse(-1 1 0 1ns 1ns 0.5ms 1ms 0)
+*v10k 1 0 pulse(-1 1 0 1ns 1ns 0.05ms 0.1ms 0)
+*v100k 1 0 pulse(-1 1 0 1ns 1ns 0.005ms 0.01ms 0)
+
+d1 1 4 DRN142S
+vt 4 5 0 dc
+ra 5 0 100
+
+.tran 0.3ns 285.2us 284.8us
+.control
+
+run
+plot i(vt)
+.endc
+.end

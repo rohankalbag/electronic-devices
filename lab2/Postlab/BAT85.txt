@@ -1,0 +1,29 @@
+*BAT85 Schottky barrier diode
+*IFSM = 5A    @ tp = 10ms
+*VF   = 800mV @ IF = 100mA
+
+
+*Package Pin 1: Cathode       
+*Package Pin 2: Anode      
+.SUBCKT BAT85 1 2
+
+* The resistor R1 does not reflect
+* a physical device. Instead it
+* improves modeling in the reverse
+* mode of operation.
+*
+D1 1 2 BAT85
+R1 1 2 5.416E+7 
+ 
+.MODEL BAT85 D 
++ IS = 2.076E-7 
++ N = 1.023 
++ BV = 33 
++ IBV = 10E-6 
++ RS = 2.326 
++ CJO = 1.21E-11 
++ VJ = 0.1319 
++ M = 0.2904 
++ EG = 0.69 
++ XTI = 2 
+.ENDS

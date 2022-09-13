@@ -1,0 +1,16 @@
+.include 'solar_cell.txt'
+
+v1 0 1 dc 
+x1 1 2 solar_cell
+vsolar 2 3 dc 0
+r1 3 0 100
+
+.dc v1 -2 2 0.01
+.control
+
+run
+let id = i(vsolar)
+let vd = {v(1) - v(2)}
+plot id vs vd
+.endc
+.end

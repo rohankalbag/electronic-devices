@@ -1,0 +1,5 @@
+1. The value of Ideality Factor for Q1 = 4.345
+
+2a. Approximate value for Vout for 1200 nm and 1000 lux is 0.099
+
+2b. Vout increases with intensity

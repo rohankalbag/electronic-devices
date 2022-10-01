@@ -1,0 +1,43 @@
+IV Char for Temp=25 for different illum
+
+.include 'photo_diode.txt'
+
+v1 0 1 -1.5 dc 
+
+x1 1 2 photo_diode IL_val=0.5e-3
+vdiode1 2 3 dc 0
+r1 3 0 100
+
+x2 1 22 photo_diode IL_val=1e-3
+vdiode2 22 32 dc 0
+r2 32 0 100
+
+x3 1 23 photo_diode IL_val=1.5e-3
+vdiode3 23 33 dc 0
+r3 33 0 100
+
+x4 1 24 photo_diode IL_val=2e-3
+vdiode4 24 34 dc 0
+r4 34 0 100
+
+x5 1 25 photo_diode IL_val=2.5e-3
+vdiode5 25 35 dc 0
+r5 35 0 100
+
+x6 1 26 photo_diode IL_val=3e-3
+vdiode6 26 36 dc 0
+r6 36 0 100
+
+.op
+.option set temp = 25
+.control
+
+run
+print i(vdiode1)
+print i(vdiode2)
+print i(vdiode3)
+print i(vdiode4)
+print i(vdiode5)
+print i(vdiode6)
+.endc
+.end

@@ -1,0 +1,21 @@
+* Photodiode SPICE Subcircuit Data
+
+.subckt photo_diode PX NX IL_val = 0e-3 rs_val = 10 rsh_val = 2.5e3
+*IL is photo generated current
+
+IL NX TMP dc {IL_val}
+
+d1 TMP NX diode
+.model diode d (is=(10e-6) n=1.5)
+
+rs TMP PX {rs_val}
+
+
+rsh TMP NX {rsh_val}
+
+cs TMP NX 1p
+
+
+.ends photo_diode
+
+

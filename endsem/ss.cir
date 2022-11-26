@@ -1,0 +1,39 @@
+*NMOS Subthreshold slope
+
+.include 2n7000.txt
+
+vgg 1 0 dc 0
+vdd 2 0 dc 5
+
+vmos1 2 4 dc 0
+vmos2 2 8 dc 0
+vmos3 2 9 dc 0
+vmos4 2 10 dc 0
+
+vbb1 3 0 dc 0
+vbb2 5 0 dc -0.5
+vbb3 6 0 dc -1
+vbb4 7 0 dc -2
+
+m1 4 1 0 3 2N7000
+m2 8 1 0 5 2N7000
+m3 9 1 0 6 2N7000
+m4 10 1 0 7 2N7000
+
+.dc vgg 0.001 5 0.01
+.control
+run
+let logidat0volt = {log(i(vmos1))}
+let logidatpoint5volt = {log(i(vmos2))}
+let logidat1volt = {log(i(vmos3))}
+let logidat1point5volt = {log(i(vmos4))}
+
+ss1 = deriv({1/logidat0volt})
+ss2 = deriv({1/logidatpoint5volt})
+ss3 = deriv({1/logidat1volt})
+ss4 = deriv({1/logidat1point5volt})
+
+plot ss1 ss2 ss3 ss4
+.endc
+.end
+

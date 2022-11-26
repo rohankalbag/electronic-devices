@@ -1,0 +1,16 @@
+*NMOS Subthreshold slope
+
+.include 2n7000.txt
+
+vgg 1 0 dc 0v
+vdd 2 0 dc 0v
+vbb 3 0 dc 0v 
+m1 2 1 0 3 2N7000
+
+.dc 
+.control
+run
+
+.endc
+.end
+

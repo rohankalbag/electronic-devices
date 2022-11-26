@@ -1,0 +1,35 @@
+*NMOS Subthreshold slope
+
+.include 2n7000.txt
+
+vgg 1 0 dc 0
+vdd 2 0 dc 5
+
+vmos1 2 4 dc 0
+vmos2 2 8 dc 0
+vmos3 2 9 dc 0
+vmos4 2 10 dc 0
+
+vbb1 3 0 dc 0
+vbb2 5 0 dc -0.5
+vbb3 6 0 dc -1
+vbb4 7 0 dc -2
+
+m1 4 1 0 3 2N7000
+m2 8 1 0 5 2N7000
+m3 9 1 0 6 2N7000
+m4 10 1 0 7 2N7000
+
+.dc vgg 0.001 5 0.01
+.control
+run
+let idat0volt = {i(vmos1)}
+let idatpoint5volt = {i(vmos2)}
+let idat1volt = {i(vmos3)}
+let idat1point5volt = {i(vmos4)}
+plot idat0volt idatpoint5volt idat1volt idat1point5volt
+
+
+.endc
+.end
+

@@ -4,6 +4,6 @@
 
 ## Course Instructor - Prof. Saurabh Lodha
 
-This repository contains all the relevant reports, files, inferences created after NGSPICE simulations as well as hands-on experimentation at WEL - IIT Bombay
+This repository contains all the relevant reports, files, inferences created after NGSPICE simulations as well as hands-on experimentation at Wadhwani Electronics Lab - Department of Electrical Engineering, Indian Institute of Technology Bombay
 
 
